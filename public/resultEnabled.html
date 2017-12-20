@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" type="text/css" ref="bower_components/bootstrap/dist/css/bootstrap.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" ref="bower_components/angular-material/angular-material.scss">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.4/angular-material.css">
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!--<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.4/angular-material.js"></script>
+    <script src='/bower_components/spin.js/spin.js'></script>
+    <script src='bower_components/angular-spinner/angular-spinner.js'></script>
+    <script src='bower_components/chart.js/dist/Chart.min.js'></script>
+    <script src='bower_components/angular-chart.js/dist/angular-chart.min.js'></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+    <script src="js/app.js"></script>
+    <script src="js/controller/surveyController.js"></script>
+</head>
+<body ng-app ="survey">
+<nav class="navbar navbar-inverse bg-primary">
+    <div class="container">
+        <h2>Survey Result</h2>
+    </div>
+</nav>
+
+<div class="container" ng-controller="resultController">
+    <div class="row well">
+        <div class="col-lg-6"  >
+            <h3 class ="ng-cloak"> Total-Feedback: {{result.total}}</h3>
+        </div>
+    </div>
+    <hr>
+</br>
+    <div class="row">
+        <div class="col-lg-3" >
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-left">
+
+                                    <div>Food</div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="panel-footer ng-cloak">
+                                <span class="pull-left ng-cloak">Bad :{{result.foodBad}} </span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">Poor : {{result.foodPoor}} </span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">Average : {{result.foodAverage}} </span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">Good : {{result.foodGood}} </span>
+                                <div class="clearfix"></div>
+                            </div>
+                          <div class="panel-footer">
+                                <span class="pull-left">Excellent : {{result.foodExcellent}} </span>
+                                <div class="clearfix"></div>
+                            </div>
+                    </div>
+        </div>
+        <div class="col-lg-3">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-left">
+
+                            <div>Ambiance</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Bad : {{result.ambianceBad}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Poor : {{result.ambiancePoor}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Average : {{result.ambianceAverage}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Good : {{result.ambianceGood}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Excellent : {{result.ambianceExcellent}} </span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-left">
+                            <div>Service</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Bad : {{result.serviceBad}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Poor : {{result.servicePoor}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Average : {{result.serviceAverage}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Good : {{result.serviceGood}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Excellent : {{result.serviceExcellent}} </span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-left">
+                            <div>Pricing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Bad : {{result.pricingBad}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Poor : {{result.pricingPoor}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Average : {{result.pricingAverage}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Good : {{result.pricingGood}} </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">Excellent : {{result.pricingExcellent}} </span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="row well" >
+        <div class="col-lg-2" >
+        </div>
+        <div class="col-lg-10" >
+
+            <canvas id="bar" class="chart chart-bar"
+                    chart-data="data" chart-labels="labels"  chart-series="series">
+            </canvas>
+               </div>
+        <div class="col-lg-2" >
+        </div>
+        </div>
+</div>
+
+</body>
+</html>
